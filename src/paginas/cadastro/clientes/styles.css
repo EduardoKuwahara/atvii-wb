@@ -1,0 +1,49 @@
+.forms {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas iguais */
+    gap: 1rem; /* Espaço entre os campos */
+    max-width: 800px;
+    margin: 1rem auto 0; /* Margem superior ajustada para ficar logo abaixo do título */
+    margin-left: 14%;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* Espaço entre o label e o input */
+}
+
+.field input, select{
+    width: 300px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.field input:focus, select:focus{
+    border-bottom: 1px solid white;
+}
+
+.submit {
+    grid-column: span 2; /* O botão ocupa as duas colunas */
+    justify-self: center;
+    margin-top: 1rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .forms {
+        grid-template-columns: 1fr; /* Apenas 1 coluna em telas menores */
+        margin-left: 0; /* Remove o margin-left para centralizar em telas pequenas */
+    }
+
+    .field input, select {
+        width: 100%; /* Faz com que os campos ocupem toda a largura disponível */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem; /* Ajusta o tamanho do título para telas muito pequenas */
+    }
+}
